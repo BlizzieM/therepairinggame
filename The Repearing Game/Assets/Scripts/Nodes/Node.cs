@@ -20,8 +20,48 @@ public abstract class Node : MonoBehaviour
 
     void OnMouseDown()
     {
-        Camera.main.transform.position = cameraPosition.position;
-        Camera.main.transform.rotation = cameraPosition.rotation;
+        Arrive ();
     }
 
+    public void Arrive()
+    {
+        //leave existing current node
+        if (GameManager.ins.currentNode != null)
+        {
+            GameManager.ins.currentNode.Leave();
+        }
+        //set currentNode
+        GameManager.ins.currentNode = this;
+
+        //move the camera
+        Camera.main.transform.position = cameraPosition.position;
+        Camera.main.transform.rotation = cameraPosition.rotation;
+
+        //turn off our own collider
+        if (col != null)
+            col.enabled = false;
+
+        //turn on all reachable node's colliders
+        foreach (Node node in reachableNodes)
+        {
+            if (node.col != null)
+            {
+                node.col.enabled = true;
+            }
+        }
+
+
+
+    }
+
+    public void Leave()
+    {
+        foreach (Node node in reachableNodes)
+        {
+            if (node.col != null)
+            {
+                node.col.enabled = false;
+            }
+        }
+    }
 }
