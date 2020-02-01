@@ -5,4 +5,5 @@ using UnityEngine;
 public class Prop : Node
 {
     public Location loc;
+    public Item itm;
 }
