@@ -1,18 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Item : MonoBehaviour
+[CreateAssetMenu(menuName = "My Assets/Items")]
+public class Item : ScriptableObject
+
 {
-    // Start is called before the first frame update
-    void Start()
+    public Sprite sprite;
+    public GameObject itemObject;
+
+    public void PointerDownEvent(PointerEventData eventData)
     {
-        
+        Debug.Log("OnPointerDown");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

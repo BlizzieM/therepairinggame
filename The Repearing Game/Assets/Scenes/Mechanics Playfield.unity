@@ -172,6 +172,8 @@ MonoBehaviour:
   - {fileID: 1250768993}
   col: {fileID: 0}
   loc: {fileID: 1540931498}
+  item: {fileID: 0}
+  dest: {fileID: 0}
 --- !u!136 &42910228
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -976,6 +978,8 @@ MonoBehaviour:
   reachableNodes: []
   col: {fileID: 0}
   loc: {fileID: 1540931498}
+  item: {fileID: 11400000, guid: d8ec654187fd0e84ca735913b2c4b71c, type: 2}
+  dest: {fileID: 1250768991}
 --- !u!65 &1250768994
 BoxCollider:
   m_ObjectHideFlags: 0

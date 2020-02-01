@@ -16,6 +16,7 @@ public abstract class Node : MonoBehaviour
     void Start()
     {
         col = GetComponent<Collider>();
+        
     }
 
     void OnMouseDown()

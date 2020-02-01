@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-
     public static GameManager ins;
-    
+
+
     [HideInInspector]
     public Node currentNode;
+    
 
     void Awake()
     {
